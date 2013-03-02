@@ -1,0 +1,14 @@
+<h1>Listing posts <a href='/posts/new' class ='btn btn-small pull-right'><i class='icon-plus'></i> New Post</a></h1>
+
+<ul class='main-list well'>
+<% @posts.each do |post| %>
+  <li class='row-fluid'>
+    <div class='span6'><%= post.title %></div>
+    <div class='pull-right'>
+      <a href="<%= post_path(post) %>" class = 'btn btn-mini'><i class = 'icon-zoom-in'></i></a>
+      <a href="<%= edit_post_path(post) %>" class = 'btn btn-mini'><i class = 'icon-edit'></i></a>
+      <a href="<%= post_path(post) %>" class = 'btn btn-danger btn-mini' data-confirm='Are you sure?' data-method='delete' ref='nofollow'><i class = 'icon-remove'></i></a>
+    </div>
+  </li>
+<% end %>
+</ul>
